@@ -8,5 +8,6 @@ using System.Threading.Tasks;
 namespace Application.Contracts.Persistence {
     public interface ICategoryRepository {
         Task<Category> GetByIdAsync(Guid id);
+        Task<List<Category>> GetAllCategories();
     }
 }
