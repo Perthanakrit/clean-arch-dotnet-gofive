@@ -9,7 +9,7 @@ namespace Persistence {
         public static IServiceCollection AddPersistenceService(this IServiceCollection services, string connection) {
 
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(connection));
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 

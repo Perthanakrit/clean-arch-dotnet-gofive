@@ -12,6 +12,10 @@ namespace Application.Profiles {
         public CategoryProfile() {
             CreateMap<Category, CategoryDto>()
                 .ForMember(des => des.Id, opt => opt.MapFrom(src => src.Id));
+            
+            CreateMap<CreateCategoryRequestDto, Category>(); // This is the mapping from CreateCategoryRequestDto to Category
+            CreateMap<UpdateCategoryRequestDto, Category>(); // This is the mapping from UpdateCategoryRequestDto to Category
+            
         }
     }
 }
