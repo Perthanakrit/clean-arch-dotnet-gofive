@@ -4,6 +4,7 @@ using Application.Features.Category.Commands.UpdateCategory;
 using Application.Features.Category.Queries.GetAllCategories;
 using Application.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -18,6 +19,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllCategories()
         {   
             try
