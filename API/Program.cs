@@ -1,4 +1,5 @@
 using Application;
+using Microsoft.Extensions.FileProviders;
 using Persistence;
 using System.Reflection;
 
@@ -32,6 +33,12 @@ app.UseCors(options => {
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
+    RequestPath = "/Images"
+});
 
 app.MapControllers();
 
