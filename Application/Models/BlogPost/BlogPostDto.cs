@@ -1,5 +1,13 @@
-﻿namespace Domain.Entities {
-    public class BlogPost {
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application.Models
+{
+    public class BlogPostDto
+    {
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string ShortDescription { get; set; }
@@ -9,6 +17,6 @@
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
         public bool IsVisible { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public List<CategoryDto> Categories { get; set; } = new List<CategoryDto>();
     }
 }
